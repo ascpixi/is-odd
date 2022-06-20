@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>is-odd example</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <script src="../src/is-odd.js" defer></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 2em;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <p><b>Number to test: </b></p> <input type="number" id="input">
+    <button id="go">Go</button>
+
+    <script defer>
+        const input = document.getElementById('input');
+        const go = document.getElementById('go');
+        go.addEventListener("click", () => {
+            const num = input.value;
+            try{
+                if (isOdd(num)) {
+                    alert(`${num} is odd`);
+                } else {
+                    alert(`${num} is even`);
+                }
+            } catch (e) {
+                alert(e);
+            }
+        });
+    </script>
+</body>
+</html>
